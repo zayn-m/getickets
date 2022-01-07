@@ -21,7 +21,7 @@ pipeline {
           stage('test') {
               steps {
                   echo 'Running test cases'
-                  sh 'cd orders && npm test'
+                  sh 'cd orders && npm run test:prod'
               }
           }
           stage('coverage') {
