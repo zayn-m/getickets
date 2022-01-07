@@ -27,7 +27,7 @@ pipeline {
           stage('coverage') {
               steps {
                   echo 'Checking the code coverage'
-                  sh 'cd orders && npm test -- --coverage'
+                  sh 'cd orders && npm run test:prod -- --coverage'
               }
           }
       }
