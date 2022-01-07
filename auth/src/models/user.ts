@@ -1,35 +1,36 @@
-import mongoose from "mongoose";
-import { Password } from "../services/password";
+import mongoose from 'mongoose';
+import { Password } from '../services/password';
 
-// An interface that describes props to create new user
+// An interface that describes the properties
+// that are requried to create a new User
 interface UserAttrs {
   email: string;
   password: string;
 }
 
-// An interface that describes the props
+// An interface that describes the properties
 // that a User Model has
 interface UserModel extends mongoose.Model<UserDoc> {
   build(attrs: UserAttrs): UserDoc;
 }
 
-// An interface that describes the props
+// An interface that describes the properties
 // that a User Document has
 interface UserDoc extends mongoose.Document {
   email: string;
   password: string;
 }
 
-const UserSchema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
   {
     email: {
       type: String,
-      required: true,
+      required: true
     },
     password: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   {
     toJSON: {
@@ -38,24 +39,23 @@ const UserSchema = new mongoose.Schema(
         delete ret._id;
         delete ret.password;
         delete ret.__v;
-      },
-    },
-    timestamps: true,
+      }
+    }
   }
 );
 
-UserSchema.pre("save", async function (done) {
-  if (this.isModified("password")) {
-    const hashed = await Password.toHash(this.get("password"));
-    this.set("password", hashed);
+userSchema.pre('save', async function(done) {
+  if (this.isModified('password')) {
+    const hashed = await Password.toHash(this.get('password'));
+    this.set('password', hashed);
   }
   done();
 });
 
-UserSchema.statics.build = (attrs: UserAttrs) => {
+userSchema.statics.build = (attrs: UserAttrs) => {
   return new User(attrs);
 };
 
-const User = mongoose.model<UserDoc, UserModel>("User", UserSchema);
+const User = mongoose.model<UserDoc, UserModel>('User', userSchema);
 
 export { User };
