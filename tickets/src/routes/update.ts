@@ -31,7 +31,7 @@ router.put(
     }
 
     if (ticket.orderId) {
-      throw new BadRequestError('Ticket is already reserved');
+      throw new BadRequestError('Cannot edit a reserved ticket');
     }
 
     if (ticket.userId !== req.currentUser!.id) {
@@ -48,7 +48,7 @@ router.put(
       title: ticket.title.toString(),
       price: ticket.price,
       userId: ticket.userId,
-      version: ticket.version
+      version: ticket.version,
     });
 
     res.send(ticket);
