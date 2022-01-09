@@ -6,7 +6,7 @@ import { app } from './app';
 dotenv.config({ path: path.resolve(__dirname, '../.env') })
 
 const start = async () => {
-  console.log('Starting up...');
+  console.log('Starting up ...');
   
   if (!process.env.JWT_KEY) {
     throw new Error('JWT_KEY must be defined');
