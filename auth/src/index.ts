@@ -1,6 +1,9 @@
 import mongoose from 'mongoose';
-
+import path from 'path';
+import dotenv from 'dotenv';
 import { app } from './app';
+
+dotenv.config({ path: path.resolve(__dirname, '../.env') })
 
 const start = async () => {
   console.log('Starting up...');
