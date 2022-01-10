@@ -5,8 +5,8 @@ A microservices application where users can buy and sell their (concert, sports,
 - Users can list a ticket for an event (concert, sports, movie) for sale
 - Other users can purchase this ticket
 - Any user can list tickets for sale and purchase tickets
-- When a user attempts to purchase a ticket, the ticket is 'locked' for 5 minutes. The user has 15 minutes to enter their payment info
-- While locked, no other user can purchase the ticket. After 15 minutes, the ticket should 'unlock'
+- When a user attempts to purchase a ticket, the ticket is 'locked' for 5 minutes. The user has 5 minutes to enter their payment info
+- While locked, no other user can purchase the ticket. After 5 minutes, if in process ticket is not purchased then it should will 'unlock'
 - Ticket prices can be edited if they are not locked
 
 ## Running locally
