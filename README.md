@@ -1,4 +1,4 @@
-# ticketing-microservices
+# GeTickets
 A microservices application where users can buy and sell their (concert, sports, movie) tickets.
 
 ## About
