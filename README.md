@@ -11,7 +11,7 @@ A microservices application where users can buy and sell their (concert, sports,
 
 ## Running locally
 - First you will have to install Docker (https://www.docker.com/)
-- After that enable Kubernetes by goind in to your Docker settings
+- After that enable Kubernetes by going in to your Docker settings
 - Install Skaffold (https://skaffold.dev/docs/install/), a tool for pushing docker images while development
 - Make sure that skaffold is installed by running `skaffold version`
 - Now start project by running `skaffold dev`
