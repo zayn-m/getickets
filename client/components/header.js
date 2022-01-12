@@ -23,7 +23,7 @@ export default ({ currentUser }) => {
     <nav className="navbar navbar-light" style={{ backgroundColor:'#e3f2fd' }}>
       <div className="container">
       <Link href="/">
-        <a className="navbar-brand">GeTickets</a>
+        <a className="navbar-brand">GeTicketsss</a>
       </Link>
 
       <div className="d-flex justify-content-end">
